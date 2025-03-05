@@ -1,5 +1,8 @@
 package Pizza;
 
+/**
+ * The type Funny.
+ */
 public class FunnyImpl implements TestInterface {
 
     @Override
