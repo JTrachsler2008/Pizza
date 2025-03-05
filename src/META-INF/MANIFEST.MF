@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Main-Class: Main
+
+Implementation-Title: untitled
+Implementation-Version: 1.0.0
+Implementation-Vendor: Joël Trachsler
+
+Specification-Title: Calculator
+Specification-Version: 1.0
+Specification-Vendor: Joël Trachsler
+
+Class-Path: lib/dependency1.jar lib/dependency2.jar
