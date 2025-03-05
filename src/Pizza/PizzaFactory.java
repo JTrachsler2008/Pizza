@@ -8,7 +8,7 @@ public class PizzaFactory {
     private static final Logger logger = Logger.getLogger(PizzaFactory.class.getName());
 
     /**
-     * @param type 
+     * @param type
      * @return
      */
     public static Pizza create(PizzaTyp type) {
@@ -21,6 +21,7 @@ public class PizzaFactory {
             case SALAMI:
                 return new PizzaSalami();
         }
+
         return null;
     }
 }
