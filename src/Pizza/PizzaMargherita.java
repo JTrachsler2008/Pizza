@@ -6,7 +6,7 @@ class PizzaMargherita extends Pizza {
     private static final Logger logger = Logger.getLogger(PizzaMargherita.class.getName());
 
     public PizzaMargherita() {
-        super(PizzaTyp.MARGHERITA);
+        super(PizzaType.MARGHERITA);
         top();
     }
 

@@ -1,21 +1,20 @@
 package Pizza;
 
 import java.util.logging.Logger;
-import java.util.ArrayList;
 
 /**
  * The type Pizza.
  */
 public class Pizza {
     private static final Logger logger = Logger.getLogger(Pizza.class.getName());
-    private final PizzaTyp type;
+    private final PizzaType type;
 
     /**
      * Instantiates a new Pizza.
      *
      * @param type the type
      */
-    public Pizza(PizzaTyp type) {
+    public Pizza(PizzaType type) {
         this.type = type;
     }
 

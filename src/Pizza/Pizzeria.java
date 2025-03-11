@@ -11,9 +11,9 @@ public class Pizzeria {
 
         Pizza[] pizzen = new Pizza[3];
 
-        pizzen[0] = PizzaFactory.create(PizzaTyp.FUNGHI);
-        pizzen[1] = PizzaFactory.create(PizzaTyp.MARGHERITA);
-        pizzen[2] = PizzaFactory.create(PizzaTyp.SALAMI);
+        pizzen[0] = Factory.create(PizzaType.FUNGHI);
+        pizzen[1] = Factory.create(PizzaType.MARGHERITA);
+        pizzen[2] = Factory.create(PizzaType.SALAMI);
 
         for (Pizza pizza : pizzen) {
             pizza.bake();

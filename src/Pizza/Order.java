@@ -1,13 +1,23 @@
 package Pizza;
 
-public class Bestellung {
+public class Order {
+    private final int orderId;
+    private final int customerId;
     private final Pizza[] pizzen = new Pizza[10];
-    private int pizzaCount;
+    private int pizzaCount = 0;
 
-    /**
-     * Pizza zur Bestellung hinzufügen
-     * @param pizza
-     */
+    public Order(int orderId, int customerId) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
 
     public void add(Pizza pizza) {
         if (pizzaCount < pizzen.length) {
@@ -15,15 +25,11 @@ public class Bestellung {
             pizzaCount++;
             System.out.println("Pizza " + pizza.getName() + " wurde zur Bestellung hinzugefügt.");
         } else {
-            System.out.println("Es können keine weiteren Pizzen zur Bestellung hinzugefügt werden.");
+            System.out.println("Maximale Anzahl an Pizzen erreicht.");
         }
     }
 
-    /**
-     *
-     * @return
-     */
-    public double calculate() {
+    public double calculateTotal() {
         double totalPrice = 0;
         for (int i = 0; i < pizzaCount; i++) {
             totalPrice += pizzen[i].getPrice();
@@ -31,19 +37,13 @@ public class Bestellung {
         return totalPrice;
     }
 
-    /**
-     *
-     */
-    public void show() {
+    public void showOrder() {
+        System.out.println("Bestellung ID: " + orderId + " für Kunde ID: " + customerId);
         for (int i = 0; i < pizzaCount; i++) {
             pizzen[i].bake();
             pizzen[i].showPrice();
         }
-        System.out.println("Gesamtpreis: " + calculate() + " Franken.");
+        System.out.println("Gesamtpreis: " + calculateTotal() + " Franken.");
         System.out.println("----------------------------------------------");
     }
 }
-
-// |Interface|, |Konventionen| , |Array statt ArrayList| , |Adresse und E-Mail|
-
-// Collections, Doku,

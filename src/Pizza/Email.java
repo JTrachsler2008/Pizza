@@ -1,9 +1,12 @@
 package Pizza;
 
-public class KundeEmail {
+/**
+ * The type Kunde email.
+ */
+public class Email {
     private String email;
 
-    public KundeEmail(String email) {
+    public Email(String email) {
         this.email = email;
     }
 

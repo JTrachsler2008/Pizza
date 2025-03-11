@@ -1,9 +1,9 @@
 package Pizza;
 
-public class KundeAdresse {
+public class Adress {
     private String adress;
 
-    public KundeAdresse(String adress) {
+    public Adress(String adress) {
         this.adress = adress;
     }
 

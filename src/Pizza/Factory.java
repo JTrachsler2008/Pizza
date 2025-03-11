@@ -3,15 +3,15 @@ package Pizza;
 
 import java.util.logging.Logger;
 
-public class PizzaFactory {
+public class Factory {
 
-    private static final Logger logger = Logger.getLogger(PizzaFactory.class.getName());
+    private static final Logger logger = Logger.getLogger(Factory.class.getName());
 
     /**
      * @param type
      * @return
      */
-    public static Pizza create(PizzaTyp type) {
+    public static Pizza create(PizzaType type) {
         //logger.info("Erstelle eine Pizza vom Typ: " + type.getName());
         switch (type) {
             case FUNGHI:
