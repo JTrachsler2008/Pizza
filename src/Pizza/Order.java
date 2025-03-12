@@ -47,3 +47,5 @@ public class Order {
         System.out.println("----------------------------------------------");
     }
 }
+
+// H2DB verbinden und testen Embedded und Stand alone, Maven anschauen, Tomcat anschauen,

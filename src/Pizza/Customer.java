@@ -34,5 +34,6 @@ public class Customer {
         System.out.println("Kunde: " + name);
         System.out.println("E-Mail: " + getEmail());
         System.out.println("Adresse: " + getAdress());
+
     }
 }

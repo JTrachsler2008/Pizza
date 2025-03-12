@@ -27,14 +27,11 @@ public class PizzaStart {
         order2.add(Factory.create(PizzaType.MARGHERITA));
         orderManager.addOrder(order2);
 
-        // Kunde 1
         kunde1.showCustomerInfo();
         orderManager.showOrdersForCustomer(kunde1.getCustomerId());
 
-        // Leere Zeile für bessere Lesbarkeit
         System.out.println();
 
-        // Kunde 2
         kunde2.showCustomerInfo();
         orderManager.showOrdersForCustomer(kunde2.getCustomerId());
 
