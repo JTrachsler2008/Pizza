@@ -48,7 +48,7 @@ public class H2DatabaseExample {
 
 
     } catch (SQLException e) {
-            System.out.println("handling exception" + e);
+            System.out.println("handling Exception" + e);
         }
         finally {
             System.out.println("Die Daten wurden erstellt.");

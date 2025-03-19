@@ -32,7 +32,6 @@ public class H2Embedded {
                 System.out.println("Daten wurden erfolgreich eingefügt.");
             }
 
-
             try (Statement selectStmt = connection.createStatement();
                  ResultSet resultSet = selectStmt.executeQuery(selectSQL)) {
 
@@ -50,14 +49,25 @@ public class H2Embedded {
         } catch (SQLException e) {
             System.err.println("Fehler bei der Datenbankverarbeitung: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            System.out.println("\nDatenbankoperationen abgeschlossen.");
         }
     }
 
-    private static void insertUser(PreparedStatement preparedStatement, String name, String email) throws SQLException {
+    private static void insertUser(PreparedStatement preparedStatement, String name, String email) {
+        try {
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, email);
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException e) {
+
+            System.err.println("Datenbankfehler: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /*private static void insertUser(PreparedStatement preparedStatement, String name, String email) throws SQLException {
         preparedStatement.setString(1, name);
         preparedStatement.setString(2, email);
         preparedStatement.executeUpdate();
-    }
+    }*/
 }
