@@ -71,3 +71,5 @@ public class H2Embedded {
         preparedStatement.executeUpdate();
     }*/
 }
+
+// streams. java.util.streams --> in verbindung mit streams --> collections-iterator, lambda functional interfaces,

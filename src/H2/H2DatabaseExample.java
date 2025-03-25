@@ -42,6 +42,7 @@ public class H2DatabaseExample {
         preparedStatement.executeUpdate();
 
 
+
         System.out.println("Daten wurden erfolgreich eingefügt.");
 
         connection.close();
