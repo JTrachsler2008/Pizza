@@ -1,10 +1,15 @@
 package Pizza;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
     private final int orderId;
     private final int customerId;
-    private final Pizza[] pizzen = new Pizza[10];
-    private int pizzaCount = 0;
+    private final List<Pizza> pizzen = new ArrayList<>();
 
     public Order(int orderId, int customerId) {
         this.orderId = orderId;
@@ -20,32 +25,39 @@ public class Order {
     }
 
     public void add(Pizza pizza) {
-        if (pizzaCount < pizzen.length) {
-            pizzen[pizzaCount] = pizza;
-            pizzaCount++;
-            System.out.println("Pizza " + pizza.getName() + " wurde zur Bestellung hinzugefügt.");
-        } else {
-            System.out.println("Maximale Anzahl an Pizzen erreicht.");
-        }
+        pizzen.add(pizza);
+        System.out.println("Pizza " + pizza.getName() + " wurde zur Bestellung hinzugefügt.");
     }
 
     public double calculateTotal() {
-        double totalPrice = 0;
-        for (int i = 0; i < pizzaCount; i++) {
-            totalPrice += pizzen[i].getPrice();
-        }
-        return totalPrice;
+        return pizzen.stream().mapToDouble(Pizza::getPrice).sum();
     }
 
     public void showOrder() {
         System.out.println("Bestellung ID: " + orderId + " für Kunde ID: " + customerId);
-        for (int i = 0; i < pizzaCount; i++) {
-            pizzen[i].bake();
-            pizzen[i].showPrice();
+        for (Pizza pizza : pizzen) {
+            pizza.bake();
+            pizza.showPrice();
         }
         System.out.println("Gesamtpreis: " + calculateTotal() + " Franken.");
         System.out.println("----------------------------------------------");
     }
-}
 
-// H2DB verbinden und testen Embedded und Stand alone, Maven anschauen, Tomcat anschauen,
+    public List<Pizza> getPizzas() {
+        return new ArrayList<>(pizzen);
+    }
+
+    public void saveToDatabase(Connection connection) {
+        String sql = "MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?)";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, this.orderId);
+            stmt.setInt(2, this.customerId);
+            stmt.setDouble(3, calculateTotal());
+            stmt.executeUpdate();
+            System.out.println("Bestellung gespeichert.");
+        } catch (SQLException e) {
+            System.out.println("Fehler beim Speichern der Bestellung: " + e.getMessage());
+        }
+    }
+}
