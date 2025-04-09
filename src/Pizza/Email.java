@@ -16,8 +16,10 @@ public class Email {
     @Column(unique = true, nullable = false)
     private String email;
 
+    // Standardkonstruktor für JPA
     public Email() {}
 
+    // Konstruktor für E-Mail-Objekte
     public Email(String email) {
         this.email = email;
         logger.info("Neue E-Mail erstellt: " + email);

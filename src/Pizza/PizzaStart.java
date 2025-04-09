@@ -12,9 +12,7 @@ public class PizzaStart {
     private static final Logger logger = Logger.getLogger(PizzaStart.class.getName());
 
     public static void main(String[] args) {
-        logger.info("==============================================");
         logger.info("PIZZA BESTELLUNGSSYSTEM STARTET...");
-        logger.info("==============================================");
 
         try (Connection connection = DatabaseManager.getConnection()) {
             PizzaType.insertPizzasIntoDatabase();
@@ -85,9 +83,18 @@ public class PizzaStart {
         }
     }
 
+
+
+
+
+
+
     private static Email findOrCreateEmail(EntityManager em, String emailStr) {
         TypedQuery<Email> query = em.createQuery("SELECT e FROM Email e WHERE e.email = :email", Email.class);
         query.setParameter("email", emailStr);
         return query.getResultStream().findFirst().orElse(new Email(emailStr));
     }
 }
+
+
+
