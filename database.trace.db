@@ -1,0 +1,68 @@
+2025-03-25 18:06:01.942562+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-25 18:06:01.951571+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-25 18:06:01.959572+01:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-25 18:06:01.963571+01:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:17:31.220261+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:17:31.240333+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:17:31.257409+01:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:17:31.264933+01:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:18:17.801601+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:18:17.817603+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:18:17.829603+01:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:18:17.836599+01:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:30:50.021638+01:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "PIZZAS" nicht gefunden (diese Datenbank ist leer)
+Table "PIZZAS" not found (this database is empty); SQL statement:
+INSERT INTO pizzas (type, price) VALUES (?, ?) ON DUPLICATE KEY UPDATE price = VALUES(price) [42104-232]
+2025-03-26 08:30:50.080490+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:30:50.082491+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "CUSTOMERS" nicht gefunden (diese Datenbank ist leer)
+Table "CUSTOMERS" not found (this database is empty); SQL statement:
+MERGE INTO customers (id, name, email) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:30:50.097491+01:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
+2025-03-26 08:30:50.106494+01:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ORDERS" nicht gefunden (diese Datenbank ist leer)
+Table "ORDERS" not found (this database is empty); SQL statement:
+MERGE INTO orders (id, customer_id, total_price) KEY(id) VALUES (?, ?, ?) [42104-232]
