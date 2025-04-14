@@ -2,16 +2,29 @@ package Pizza;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.logging.Logger;
-import java.util.logging.Level;
+import java.util.logging.*;
 
 public class PizzaStart {
 
     private static final Logger logger = Logger.getLogger(PizzaStart.class.getName());
 
     public static void main(String[] args) {
+        // Logging-Konfiguration laden
+        try (InputStream configFile = PizzaStart.class.getResourceAsStream("/Logging/logging.properties")) {
+            if (configFile != null) {
+                LogManager.getLogManager().readConfiguration(configFile);
+            } else {
+                System.err.println("Konnte logging.properties nicht finden!");
+            }
+        } catch (IOException e) {
+            System.err.println("Fehler beim Laden der logging.properties:");
+            e.printStackTrace();
+        }
+
         logger.info("PIZZA BESTELLUNGSSYSTEM STARTET...");
 
         try (Connection connection = DatabaseManager.getConnection()) {
@@ -83,18 +96,9 @@ public class PizzaStart {
         }
     }
 
-
-
-
-
-
-
     private static Email findOrCreateEmail(EntityManager em, String emailStr) {
         TypedQuery<Email> query = em.createQuery("SELECT e FROM Email e WHERE e.email = :email", Email.class);
         query.setParameter("email", emailStr);
         return query.getResultStream().findFirst().orElse(new Email(emailStr));
     }
 }
-
-
-

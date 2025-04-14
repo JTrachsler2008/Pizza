@@ -23,8 +23,10 @@ public class Pizza {
     }
 
     public void bake() {
+        logger.fine("Backvorgang gestartet für: " + type.getName());
         System.out.println("Die Pizza " + type.getName() + " wird gebacken.");
     }
+
 
     public void showPrice() {
         System.out.println("Der Preis der Pizza " + type.getName() + " ist " + type.getPrice() + " Franken.");

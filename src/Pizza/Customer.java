@@ -56,3 +56,5 @@ public class Customer {
         logger.info("Adresse: " + getAdress());
     }
 }
+
+// Logging mit Properties
